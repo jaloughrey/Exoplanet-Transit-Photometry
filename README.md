@@ -17,3 +17,8 @@
 - add the data reduction script maybe as last feature and generalise this aswell
 
 -upload the data somewhere onine and provide link.
+
+
+Data:
+WASP-52b:  https://mega.nz/folder/eVs2QZCI#FHtvj8Tk0IrjMUmsh1_uDg
+TOI-2046b: https://mega.nz/folder/HYkliS4b#i4OzqqvxW0FdLUBCX5osSQ
