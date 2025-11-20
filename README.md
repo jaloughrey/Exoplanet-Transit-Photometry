@@ -1,4 +1,4 @@
-# Discovering-an-Exoplanet-from-Cardiff
+# Exoplanet-Transit-Photometry
 
 - generalise the code to work for any transit, just need star positions and some other parameters
     - go through script and remove all unnecesary features
