@@ -1,11 +1,6 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[33]:
-
 
 #START OF MAIN PROGRAM
-#collect all file names in array
+
 from astropy.io import fits
 from astropy.wcs import WCS
 from datetime import datetime
@@ -23,7 +18,6 @@ import astropy.units as u
 from scipy.optimize import curve_fit
 
 
-# In[34]:
 
 
 folder = r"C:\Users\Joe\Documents\Uni\Year 3\PX3350 Physics Project\Test Data\TOI-2046b (Solved)\exoplanet transit-20240330T124750Z-001\exoplanet transit\light frames\LIGHTS"
@@ -47,11 +41,7 @@ group_size = param['group_size'].values[0]
 
 
 
-# In[3]:
-
-
 #define aperture function
-
 def aperture(ra,dec,image,ap_rad,ap_bkg):
     #open image
     file = fits.open(os.path.join(folder, image))
@@ -95,8 +85,6 @@ def aperture(ra,dec,image,ap_rad,ap_bkg):
 #back_total: sum of pixels magnitudes in background 
 
 
-# In[4]:
-
 
 #time array point for each image
 time = np.arange(0,len(Files),1)
@@ -114,7 +102,7 @@ for i in range(0,len(ref)):
         flux[i][j] = aperture(ref[i][0],ref[i][1],Files[j],ap_rad,ap_bkg)    
 
 
-# In[5]:
+
 
 
 # --- Dynamic binning based on target_points ---
