@@ -1,6 +1,11 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[76]:
+
 
 #START OF MAIN PROGRAM
-
+#collect all file names in array
 from astropy.io import fits
 from astropy.wcs import WCS
 from datetime import datetime
@@ -18,9 +23,10 @@ import astropy.units as u
 from scipy.optimize import curve_fit
 
 
+# In[77]:
 
 
-folder = r"C:\Users\Joe\Documents\Uni\Year 3\PX3350 Physics Project\Test Data\TOI-2046b (Solved)\exoplanet transit-20240330T124750Z-001\exoplanet transit\light frames\LIGHTS"
+folder = r"C:\Users\Joe\Documents\Uni\Year 3\PX3350 Physics Project\Test Data\WASP-52b-lights (Solved)\LIGHTS"
 
 full_paths = glob.glob(folder + r"\*.fits")
 Files = [os.path.basename(f) for f in full_paths]
@@ -41,7 +47,11 @@ group_size = param['group_size'].values[0]
 
 
 
+# In[78]:
+
+
 #define aperture function
+
 def aperture(ra,dec,image,ap_rad,ap_bkg):
     #open image
     file = fits.open(os.path.join(folder, image))
@@ -85,6 +95,8 @@ def aperture(ra,dec,image,ap_rad,ap_bkg):
 #back_total: sum of pixels magnitudes in background 
 
 
+# In[79]:
+
 
 #time array point for each image
 time = np.arange(0,len(Files),1)
@@ -102,7 +114,7 @@ for i in range(0,len(ref)):
         flux[i][j] = aperture(ref[i][0],ref[i][1],Files[j],ap_rad,ap_bkg)    
 
 
-
+# In[80]:
 
 
 # --- Dynamic binning based on target_points ---
@@ -178,14 +190,14 @@ plt.figure(figsize=(9, 5))
 plt.title("Transit Light Curve")
 plt.xlabel("Time [dd hh:mm]")
 plt.ylabel("Relative Flux")
-plt.ylim(0.97,1.01)
+#plt.ylim(0.97,1.01)
 
 plt.errorbar(time,normalised_flux,yerr=std_err,fmt ='.',markersize=10)
 #plt.plot(date,normalised_flux,'.', markersize=10)
 plt.grid()
 
 
-# In[35]:
+# In[81]:
 
 
 import batman
@@ -357,14 +369,12 @@ def run_emcee(initial_guess, period, log_posterior, nwalkers=32, burn_steps=2000
     
 
 
-# In[36]:
+# In[82]:
 
-
-t = np.linspace(-0.03, 0.03, 66)
 
 #period = database lookup
 from astroquery.ipac.nexsci.nasa_exoplanet_archive import NasaExoplanetArchive
-
+target_star= "WASP-52 b"
 result = NasaExoplanetArchive.query_criteria(
     table="pscomppars",
     select="pl_name, pl_orbper",
@@ -373,6 +383,13 @@ result = NasaExoplanetArchive.query_criteria(
 
 period = result["pl_orbper"][0].value
 print(period)
+
+
+# In[83]:
+
+
+t = np.linspace(-0.03, 0.03, len(Files))
+
 
 
 """
@@ -388,9 +405,9 @@ params = [
 
 
 #produce initial parameters 
-# params order: [t0, period, rp, a/Rs, inc, baseline, ln_sigma]
+# params order: [t0, rp, a/Rs, inc, baseline, ln_sigma]
 
-initial_params = [0.0, 0.12, 5.0, 86, 0.0, np.log(0.0005)]
+initial_params = [0.0, 0.165, 7.5, 85, 0.0, np.log(0.0005)]
 print("initial params:", initial_params)
 
 
@@ -426,7 +443,7 @@ fig = corner.corner(
 plt.show()
 
 
-# In[37]:
+# In[84]:
 
 
 # Compute median parameter vector
@@ -453,7 +470,7 @@ plt.grid()
 plt.show()
 
 
-# In[38]:
+# In[85]:
 
 
 plt.figure(figsize=(10,5))
@@ -476,7 +493,7 @@ plt.grid()
 plt.show()
 
 
-# In[39]:
+# In[86]:
 
 
 # Extract median parameters
