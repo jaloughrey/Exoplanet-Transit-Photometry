@@ -12,6 +12,7 @@ The purpose of this project is to provide easy-to-use transit light curves for a
 ## Tutorial:
 
 <br>
+
 ### Step 1: Finding a transit 
 
 The database query tool can be used to access the Nasa exoplanet database and find suitable transiting planets to observe from your local area. 
@@ -37,7 +38,6 @@ Update the parameters.csv file. The target is your planets name and should be gi
 
 ### Step 4: Fitting transit 
 
-<br>
 Normalisation will be applied to the target star to reveal the transit. The program will then use a multi parameter MCMC fit to generate the best fit parameters. This process will be done automatically and return the best fit transit light curve plot along side the table of initial and fitted parameters. 
 Initial guesses for parameters are estimated based on the transit data. This program is intended for a single transit event, therefore there is no way to discern the period which requires measuring the time between multiple transit events. Due to this, the period is queried from the exoplanet database and kept constant to use for producing model light curves. It is not used as a mcmc parameter, as it cannot be reliably constrained and will introduce degeneracy between parameters reducing the overall accuracy by a significant amount. 
 <br>
