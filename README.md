@@ -7,7 +7,6 @@
 This is a tool for amateur astronomers to locate, observe and fit transit light curves from previously discovered exoplanets. An exoplanet transit occurs when a planet eclipses its host star from the perspective of earth, this will produce small, periodic variations in brightness from the host star that can be graphically conveyed via a transit light curve. Thousands of exoplanets have been discovered using the transit method.
 This program will process and normalise transit data to produce a clear transit light curve, it will then perform a multi parameter mcmc fit to return key parameters of the exoplanet such as the radius, semi major axis and inclination. As these are known planets the returned parameters can be compared against those found in professional studies. 
 The purpose of this project is to provide easy-to-use transit light curves for amateur astronomers and hobbyists. Hopefully this can inspire interest into exciting and active areas of astronomy, like exoplanets, and demonstrate that these discoveries are far more accessible than people might initially expect. 
-<br>
 
 ## Tutorial:
 
