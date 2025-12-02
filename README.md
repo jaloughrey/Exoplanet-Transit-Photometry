@@ -26,7 +26,11 @@ TOI-2046b: https://mega.nz/folder/HYkliS4b#i4OzqqvxW0FdLUBCX5osSQ
 ### Step 2: Reference stars 
 
 Once data is acquired, the next step is to select suitable reference stars from your images. The reference stars are extremely important and will greatly affect the quality of the final light curve. I recommend 4-6 reference star. 
-A fits file viewer software like ASTAP can be used to select reference stars and find their celestial coordinates. Reference stars should be similar in brightness to that of the target star, which will be the star at the centre of the images. Stars at the edges of the image should be avoided for selection, as small amounts of trailing during observation can cause these stars to leave the frame.  Once stars are selected, note their celestial coordinates (RA, DEC) and update the coordinates.csv file with all reference stars and the target star positions. NOTE: COORDINATES MUST BE GIVEN IN UNITS OF DEGREES. This will mean that you will have to convert Ra from hours to degrees using an online converter. 
+A fits file viewer software like ASTAP can be used to select reference stars and find their celestial coordinates. 
+<br>
+!(/images/ref stars.png)
+<br>
+Reference stars should be similar in brightness to that of the target star, which will be the star at the centre of the images. Stars at the edges of the image should be avoided for selection, as small amounts of trailing during observation can cause these stars to leave the frame.  Once stars are selected, note their celestial coordinates (RA, DEC) and update the coordinates.csv file with all reference stars and the target star positions. NOTE: COORDINATES MUST BE GIVEN IN UNITS OF DEGREES. This will mean that you will have to convert Ra from hours to degrees using an online converter. 
 To assess the suitability of the chosen reference stars the program will return a plot of normalised flux from each reference star separately, these plots should return a flat trend centred at 1.0, if any other trend is noted the reference star is not applicable and should be removed or replaced. 
 <br>
 
