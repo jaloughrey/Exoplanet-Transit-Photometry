@@ -29,7 +29,7 @@ Once data is acquired, the next step is to select suitable reference stars from 
 A fits file viewer software like ASTAP can be used to select reference stars and find their celestial coordinates. 
 <br>
 
-![png](/images/ref stars.png)
+![png](images/ref stars.png)
 
 <br>
 Reference stars should be similar in brightness to that of the target star, which will be the star at the centre of the images. Stars at the edges of the image should be avoided for selection, as small amounts of trailing during observation can cause these stars to leave the frame.  Once stars are selected, note their celestial coordinates (RA, DEC) and update the coordinates.csv file with all reference stars and the target star positions. NOTE: COORDINATES MUST BE GIVEN IN UNITS OF DEGREES. This will mean that you will have to convert Ra from hours to degrees using an online converter. 
