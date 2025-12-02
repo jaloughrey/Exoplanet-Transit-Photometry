@@ -1,4 +1,4 @@
-# Exoplanet-Transit-Photometry
+# Exoplanet Transit Photometry
 
 <br>
 
